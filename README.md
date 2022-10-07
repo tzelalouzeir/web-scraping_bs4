@@ -1,4 +1,5 @@
-# webscrapping with bs4
+
+# webscrapping with bs4 and saving as .csv
 
 Sometimes it's so difficult for me to search GPU prices and I'm lazy. For this reason simply created program which is web scrapping with beautifulsoup4 (simply we can call bs4). This code is for educational.
 
@@ -15,10 +16,15 @@ pip install beautifulsoup4
 ```
 
 ## Usage
-
+- Python 3.10.5
+- Beautifulsoup4
+- pandas 1.3.4
 ```python
 from urllib.request import Request, urlopen
-from bs4 import BeautifulSoup as soup 
+from bs4 import BeautifulSoup as soup
+import pandas as pd
+import re
+from itertools import chain 
 
 url = 'https://www.bestprice.gr/item/2156396846/sapphire-radeon-rx-6800-16gb-nitro.html'
 req = Request(url , headers={'User-Agent': 'Mozilla/5.0'})
@@ -29,7 +35,8 @@ soup = soup(webpage, "html.parser")
 # specify which column will be scraped in html code
 lists = soup.find_all('div',attrs={'class':'prices__group'})
 ```
-As we print(lists), will see bunch of HTML code. We can determine what we can to scrap. I would like to see name GPU and price for this reason but its so complex! There is one easy trick that you can find which title belong to name and price. 
+As we print(lists), will see bunch of HTML code. We can determine what we can to scrap. I would like to see name GPU and price for this reason but its so complex! There is one easy trick that you can find which title belong to name and price.
+- go website (im searching rx 6800 gpus you can change it) 
 - right click on price > Inspect > Right screen you will see Elements window
 - <div class="prices__price"><a title="Sapphire Radeon RX 6800 16GB Nitro+ (11305-01-20G)" data-trackga="CTR Cluster|button|" rel="nofollow" href="/to/76138597/sapphire-radeon-rx-6800-16gb-nitro.html?from=&amp;seq=1&amp;bpref=itemPage">609,50€</a>
 - as we see prices_price is our title to find price 
@@ -49,15 +56,40 @@ for i in lists:
     price = i.find('div', attrs={'class':'prices__price'}).text[:8]
     title_data.append(title)
     price_data.append(price)
-    
+ 
 # another loop for href(links that starting with /item/ which they are products)    
 for a in soup.find('div').find_all('a', href=re.compile('^/item/')):
     link_data.append(a['href'])
-```
-## Contributing
-Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
 
-Please make sure to update tests as appropriate.
+# links need some page starting so which is bestprice.gr for me
+link_data = list(dict.fromkeys(link_data))
+link_head = 'https://www.bestprice.gr'
+list3=pd.DataFrame(columns=link_data).add_prefix(link_head).columns.tolist()
+```
+
+```python
+# while working on greek site remove greek characters cause need pure data
+greek_codes   = chain(range(0x370, 0x3e2), range(0x3f0, 0x400))
+greek_symbols = (chr(c) for c in greek_codes)
+greek_letters = [c for c in greek_symbols if c.isalpha()]
+str1 = ''.join(greek_letters)
+removetable = str.maketrans('','',str1)
+out_list = [s.translate(removetable) for s in title_data]
+```
+```python
+from csv import writer
+import csv
+
+# Saving results to CSV file 
+with open("gpu/6800.csv", "w", encoding='utf-8',newline='') as csvfile:
+    writer = csv.writer(csvfile)
+    header = ['Titles','Prices','Links']
+    writer.writerow(header)
+    for value in range(len(out_list)):
+        writer.writerow([out_list[value], price_data[value], list3[value]])
+```
+
 
 ## License
-[License](https://github.com/tzelalouzeir/webscrapping/blob/main/LICENSE)
+Copyright © 2022 [Tzelal Ouzeir](https://github.com/tzelalouzeir) 
+- [License](https://github.com/tzelalouzeir/webscrapping/blob/main/LICENSE)
