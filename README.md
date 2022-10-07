@@ -108,8 +108,8 @@ with open("gpu/6800.csv", "w", encoding='utf-8',newline='') as csvfile:
 Thank for everyone.
 
 ## Authors 🗿
-[Tzelal Ouzeir](https://github.com/tzelalouzeir) 
+github: [Tzelal Ouzeir](https://github.com/tzelalouzeir) 
 
 ## License
-Copyright © 2022 [Tzelal Ouzeir](https://github.com/tzelalouzeir) 
-- [License](https://github.com/tzelalouzeir/webscrapping/blob/main/LICENSE)
+- Copyright © 2022 [Tzelal Ouzeir](https://github.com/tzelalouzeir) 
+- [MIT](https://github.com/tzelalouzeir/webscrapping/blob/main/LICENSE)
