@@ -53,7 +53,7 @@ link_data=[]
 
 for i in lists:
     title = i.find('div', attrs={'class':'prices__title'}).text
-    price = i.find('div', attrs={'class':'prices__price'}).text[:8]
+    price = i.find('div', attrs={'class':'prices__price'}).text[:7]
     title_data.append(title)
     price_data.append(price)
  
@@ -94,16 +94,15 @@ with open("gpu/6800.csv", "w", encoding='utf-8',newline='') as csvfile:
 
 | Titles        | Prices           | Links  |
 | ------------- |:-------------:| -----:|
-| 	Titles
-|	Sapphire Radeon RX 6800 16GB Nitro+  (11305-01-20G) |
-|	Sapphire Radeon RX 6800 16GB Nitro+|
-|	VGA SAPPHIRE NITRO+ RADEON RX 6800 16GB Gaming GDDR6 OC  (UEFI)|
-|	SAPPHIRE NITRO+ RX 6800 16 GB GDDR6|
-|	Sapphire Radeon RX 6800 16GB Nitro+  (11305-01-20G)|
-|	Sapphire Radeon RX 6800 Nitro+ 16GB GDDR6 11305-01-20G|
-|	Sapphire Radeon Nitro+ RX 6800 16GB GDDR6, 256-Bit, HDMI, DP  (11305-01-20G)|
-|   Sapphire NITRO+ RX 6800 - graphics card - Radeon RX 6800 - 16 GB|
-|	Sapphire Radeon RX 6800 16GB Nitro+     | right-aligned | $1600 |
+|	Sapphire Radeon RX 6800 16GB Nitro+  (11305-01-20G) |627,50€ |
+|	Sapphire Radeon RX 6800 16GB Nitro+| 	644,56€|
+|	VGA SAPPHIRE NITRO+ RADEON RX 6800 16GB Gaming GDDR6 OC  (UEFI)| 626,54|
+|	SAPPHIRE NITRO+ RX 6800 16 GB GDDR6|631,96€|
+|	Sapphire Radeon RX 6800 16GB Nitro+  (11305-01-20G)| 643,50€|
+|	Sapphire Radeon RX 6800 Nitro+ 16GB GDDR6 11305-01-20G| 719,13€|
+|	Sapphire Radeon Nitro+ RX 6800 16GB GDDR6, 256-Bit, HDMI, DP  (11305-01-20G)|749,04€|
+|   Sapphire NITRO+ RX 6800 - graphics card - Radeon RX 6800 - 16 GB| 767,00€|
+|	Sapphire Radeon RX 6800 16GB Nitro+     | right-aligned | $1600 | 961,50€|
 
 ## License
 Copyright © 2022 [Tzelal Ouzeir](https://github.com/tzelalouzeir) 
