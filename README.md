@@ -1,7 +1,7 @@
 
 # web scrapping with bs4 and saving as .csv
 
-Sometimes it's so difficult for me to search GPU prices and I'm lazy. For this reason simply created program which is web scrapping with beautifulsoup4 (simply we can call bs4). This code is for educational.
+Sometimes it's so difficult for me to search GPU prices and I'm lazy. For this reason simply created program which is web scrapping with beautifulsoup4 ( we can call bs4). This code is for educational.
 
 - used [bestprice.gr](https://www.youtube.com/shorts/843c0Ek9Ys4) as scrapping
 - knowledge HTML, CSS
