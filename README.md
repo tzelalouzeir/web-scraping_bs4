@@ -1,5 +1,5 @@
 
-# webscrapping with bs4 and saving as .csv
+# web scrapping with bs4 and saving as .csv
 
 Sometimes it's so difficult for me to search GPU prices and I'm lazy. For this reason simply created program which is web scrapping with beautifulsoup4 (simply we can call bs4). This code is for educational.
 
