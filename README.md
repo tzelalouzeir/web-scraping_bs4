@@ -35,7 +35,7 @@ soup = soup(webpage, "html.parser")
 # specify which column will be scraped in html code
 lists = soup.find_all('div',attrs={'class':'prices__group'})
 ```
-As we ```print(lists)```, will see bunch of HTML code. We can determine what we can to scrap. I would like to see name GPU and price for this reason but its so complex! There is one easy trick that you can find which title belong to name and price.
+As we ```print(lists)```, will see bunch of HTML code. We can determine what we can to scrap. Lets search name GPU and prices but its so complex! There is one easy trick that you can find which title belong to name and price.
 - go website (im searching rx 6800 gpus you can change it) 
 - right click on price > Inspect > Right screen you will see Elements window
 - ```<div class="prices__price"><a title="Sapphire Radeon RX 6800 16GB Nitro+ (11305-01-20G)" data-trackga="CTR Cluster|button|" rel="nofollow" href="/to/76138597/sapphire-radeon-rx-6800-16gb-nitro.html?from=&amp;seq=1&amp;bpref=itemPage">609,50€</a>```
@@ -88,7 +88,15 @@ with open("gpu/6800.csv", "w", encoding='utf-8',newline='') as csvfile:
     for value in range(len(out_list)):
         writer.writerow([out_list[value], price_data[value], list3[value]])
 ```
+## Results
 
+
+
+| Tables        | Are           | Cool  |
+| ------------- |:-------------:| -----:|
+| col 3 is      | right-aligned | $1600 |
+| col 2 is      | centered      |   $12 |
+| zebra stripes | are neat      |    $1 |
 
 ## License
 Copyright © 2022 [Tzelal Ouzeir](https://github.com/tzelalouzeir) 
