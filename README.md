@@ -104,6 +104,8 @@ with open("gpu/6800.csv", "w", encoding='utf-8',newline='') as csvfile:
 |   Sapphire NITRO+ RX 6800 - graphics card - Radeon RX 6800 - 16 GB| 767,00€|https://www.bestprice.gr/item/666...
 |	Sapphire Radeon RX 6800 16GB Nitro+     | 961,50€|https://www.bestprice.gr/item/6969...
 
+**If there is any bugs, please contact me.**
+
 ## Support me with Star ⭐
 Thank for everyone.
 
