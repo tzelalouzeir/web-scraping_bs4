@@ -16,6 +16,7 @@ pip install beautifulsoup4
 ```
 
 ## Usage
+- jupyter lab (best IDLE for python :D)
 - Python 3.10.5
 - Beautifulsoup4
 - pandas 1.3.4
