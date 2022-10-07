@@ -88,15 +88,22 @@ with open("gpu/6800.csv", "w", encoding='utf-8',newline='') as csvfile:
     for value in range(len(out_list)):
         writer.writerow([out_list[value], price_data[value], list3[value]])
 ```
-## Results
+## Results .csv
 
 
 
-| Tables        | Are           | Cool  |
+| Titles        | Prices           | Links  |
 | ------------- |:-------------:| -----:|
-| col 3 is      | right-aligned | $1600 |
-| col 2 is      | centered      |   $12 |
-| zebra stripes | are neat      |    $1 |
+| 	Titles
+|	Sapphire Radeon RX 6800 16GB Nitro+  (11305-01-20G) |
+|	Sapphire Radeon RX 6800 16GB Nitro+|
+|	VGA SAPPHIRE NITRO+ RADEON RX 6800 16GB Gaming GDDR6 OC  (UEFI)|
+|	SAPPHIRE NITRO+ RX 6800 16 GB GDDR6|
+|	Sapphire Radeon RX 6800 16GB Nitro+  (11305-01-20G)|
+|	Sapphire Radeon RX 6800 Nitro+ 16GB GDDR6 11305-01-20G|
+|	Sapphire Radeon Nitro+ RX 6800 16GB GDDR6, 256-Bit, HDMI, DP  (11305-01-20G)|
+|   Sapphire NITRO+ RX 6800 - graphics card - Radeon RX 6800 - 16 GB|
+|	Sapphire Radeon RX 6800 16GB Nitro+     | right-aligned | $1600 |
 
 ## License
 Copyright © 2022 [Tzelal Ouzeir](https://github.com/tzelalouzeir) 
